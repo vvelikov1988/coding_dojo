@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Django Form Assignment</title>
+      {% load static %}		<!-- added this line -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+      <script src="{% static 'js/script.js' %}"></script>
+<h1>Coding Dojo Student Enrollment Form:</h1>
+<form action="/results" method="POST">
+    {% csrf_token %}
+<label for ='name'>First Name</label> <br>
+<input type="text" id='name' name = 'name'> <br>
+
+<label for = 'dojo_location'>Please Select Dojo Location:</label><br>
+<select name='dojo_location' id='dojo_location'>
+    <option value="San Jose, CA">San Jose</option>
+    <option value="Oakland, CA">Oakland</option>
+    <option value="Boise, ID">Boise</option>
+    <option value="Seattle, WA">Seattle</option>
+</select><br>
+
+<label for = 'favorite_language'>Favorite Languages: </label><br>
+    <input type = "radio" id="python" name='favorite_language' value = "python">
+    <label for = "python"> Python </label><br>
+    <input type = "radio" id="js" name='favorite_language' value = "js">
+    <label for = "js"> JavaScript</label> <br>
+    <input type = "radio" id="java" name='favorite_language' value = "java">
+    <label for = "java"> Java </label><br>
+    <input type = "radio" id="other" name='favorite_language' value = "other">
+    <label for = "other"> Other </label><br>
+ <p>Comments (optional):</p>   
+<textarea id='comment' name = 'comment' rows="4" cols="50"> Enter Additional Comments Here... </textarea><br>
+<input type="submit" value="submit">
+</form>
